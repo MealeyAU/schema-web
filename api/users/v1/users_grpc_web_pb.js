@@ -15,6 +15,8 @@
 const grpc = {};
 grpc.web = require('grpc-web');
 
+
+var api_users_v1_user_pb = require('../../../api/users/v1/user_pb.js')
 const proto = {};
 proto.mealey = {};
 proto.mealey.api = {};

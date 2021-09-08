@@ -12,6 +12,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var api_users_v1_user_pb = require('../../../api/users/v1/user_pb.js');
+goog.object.extend(proto, api_users_v1_user_pb);
 goog.exportSymbol('proto.mealey.api.users.v1.CreateUserRequest', null, global);
 goog.exportSymbol('proto.mealey.api.users.v1.CreateUserResult', null, global);
 /**
@@ -189,7 +191,7 @@ proto.mealey.api.users.v1.CreateUserResult.prototype.toObject = function(opt_inc
  */
 proto.mealey.api.users.v1.CreateUserResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    user: (f = msg.getUser()) && api_users_v1_user_pb.User.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -226,6 +228,11 @@ proto.mealey.api.users.v1.CreateUserResult.deserializeBinaryFromReader = functio
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new api_users_v1_user_pb.User;
+      reader.readMessage(value,api_users_v1_user_pb.User.deserializeBinaryFromReader);
+      msg.setUser(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -255,6 +262,51 @@ proto.mealey.api.users.v1.CreateUserResult.prototype.serializeBinary = function(
  */
 proto.mealey.api.users.v1.CreateUserResult.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getUser();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      api_users_v1_user_pb.User.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional User user = 1;
+ * @return {?proto.mealey.api.users.v1.User}
+ */
+proto.mealey.api.users.v1.CreateUserResult.prototype.getUser = function() {
+  return /** @type{?proto.mealey.api.users.v1.User} */ (
+    jspb.Message.getWrapperField(this, api_users_v1_user_pb.User, 1));
+};
+
+
+/**
+ * @param {?proto.mealey.api.users.v1.User|undefined} value
+ * @return {!proto.mealey.api.users.v1.CreateUserResult} returns this
+*/
+proto.mealey.api.users.v1.CreateUserResult.prototype.setUser = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.mealey.api.users.v1.CreateUserResult} returns this
+ */
+proto.mealey.api.users.v1.CreateUserResult.prototype.clearUser = function() {
+  return this.setUser(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.mealey.api.users.v1.CreateUserResult.prototype.hasUser = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
