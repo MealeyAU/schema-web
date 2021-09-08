@@ -35,6 +35,9 @@ jobs:
           tag_name: ${{ steps.get_tag.outputs.prop }}
           release_name: ${{ steps.get_release_name.outputs.prop }}
           body: ${{ steps.get_changelog.outputs.prop }}
+      - uses: actions/setup-node@v2
+          with:
+            node-version: '12.x'
       - run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
