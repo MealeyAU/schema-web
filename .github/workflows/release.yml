@@ -23,10 +23,6 @@ jobs:
         with:
           path: 'manifest.json'
           prop_path: 'changelog'
-      - uses: actions-ecosystem/action-push-tag@v1
-        with:
-          tag: ${{ steps.get_tag.outputs.prop }}
-          message: ${{ steps.get_tag.outputs.prop }}
       - name: Create a GitHub release
         uses: actions/create-release@v1
         env:
