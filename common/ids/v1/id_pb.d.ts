@@ -4,6 +4,9 @@ import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/t
 
 
 export class Id extends jspb.Message {
+  getSimplified(): string;
+  setSimplified(value: string): Id;
+
   getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): Id;
   hasTimestamp(): boolean;
@@ -22,6 +25,7 @@ export class Id extends jspb.Message {
 
 export namespace Id {
   export type AsObject = {
+    simplified: string,
     timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     entityId: string,
   }

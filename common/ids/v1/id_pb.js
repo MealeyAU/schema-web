@@ -68,8 +68,9 @@ proto.mealeyau.common.ids.v1.Id.prototype.toObject = function(opt_includeInstanc
  */
 proto.mealeyau.common.ids.v1.Id.toObject = function(includeInstance, msg) {
   var f, obj = {
+    simplified: jspb.Message.getFieldWithDefault(msg, 1, ""),
     timestamp: (f = msg.getTimestamp()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    entityId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    entityId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -107,11 +108,15 @@ proto.mealeyau.common.ids.v1.Id.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSimplified(value);
+      break;
+    case 2:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setTimestamp(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setEntityId(value);
       break;
@@ -144,10 +149,17 @@ proto.mealeyau.common.ids.v1.Id.prototype.serializeBinary = function() {
  */
 proto.mealeyau.common.ids.v1.Id.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getSimplified();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getTimestamp();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -155,7 +167,7 @@ proto.mealeyau.common.ids.v1.Id.serializeBinaryToWriter = function(message, writ
   f = message.getEntityId();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      3,
       f
     );
   }
@@ -163,12 +175,30 @@ proto.mealeyau.common.ids.v1.Id.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional google.protobuf.Timestamp timestamp = 1;
+ * optional string simplified = 1;
+ * @return {string}
+ */
+proto.mealeyau.common.ids.v1.Id.prototype.getSimplified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.mealeyau.common.ids.v1.Id} returns this
+ */
+proto.mealeyau.common.ids.v1.Id.prototype.setSimplified = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp timestamp = 2;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.mealeyau.common.ids.v1.Id.prototype.getTimestamp = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 1));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
 };
 
 
@@ -177,7 +207,7 @@ proto.mealeyau.common.ids.v1.Id.prototype.getTimestamp = function() {
  * @return {!proto.mealeyau.common.ids.v1.Id} returns this
 */
 proto.mealeyau.common.ids.v1.Id.prototype.setTimestamp = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -195,16 +225,16 @@ proto.mealeyau.common.ids.v1.Id.prototype.clearTimestamp = function() {
  * @return {boolean}
  */
 proto.mealeyau.common.ids.v1.Id.prototype.hasTimestamp = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string entity_id = 2;
+ * optional string entity_id = 3;
  * @return {string}
  */
 proto.mealeyau.common.ids.v1.Id.prototype.getEntityId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -213,7 +243,7 @@ proto.mealeyau.common.ids.v1.Id.prototype.getEntityId = function() {
  * @return {!proto.mealeyau.common.ids.v1.Id} returns this
  */
 proto.mealeyau.common.ids.v1.Id.prototype.setEntityId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
