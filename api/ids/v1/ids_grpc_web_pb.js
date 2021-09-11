@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for mealey.api.ids.v1
+ * @fileoverview gRPC-Web generated client stub for mealeyau.api.ids.v1
  * @enhanceable
  * @public
  */
@@ -18,10 +18,10 @@ grpc.web = require('grpc-web');
 
 var common_ids_v1_id_pb = require('../../../common/ids/v1/id_pb.js')
 const proto = {};
-proto.mealey = {};
-proto.mealey.api = {};
-proto.mealey.api.ids = {};
-proto.mealey.api.ids.v1 = require('./ids_pb.js');
+proto.mealeyau = {};
+proto.mealeyau.api = {};
+proto.mealeyau.api.ids = {};
+proto.mealeyau.api.ids.v1 = require('./ids_pb.js');
 
 /**
  * @param {string} hostname
@@ -31,7 +31,7 @@ proto.mealey.api.ids.v1 = require('./ids_pb.js');
  * @struct
  * @final
  */
-proto.mealey.api.ids.v1.IdServiceClient =
+proto.mealeyau.api.ids.v1.IdServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options['format'] = 'text';
@@ -57,7 +57,7 @@ proto.mealey.api.ids.v1.IdServiceClient =
  * @struct
  * @final
  */
-proto.mealey.api.ids.v1.IdServicePromiseClient =
+proto.mealeyau.api.ids.v1.IdServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options['format'] = 'text';
@@ -78,58 +78,58 @@ proto.mealey.api.ids.v1.IdServicePromiseClient =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.mealey.api.ids.v1.GenerateRequest,
- *   !proto.mealey.api.ids.v1.GenerateResult>}
+ *   !proto.mealeyau.api.ids.v1.GenerateRequest,
+ *   !proto.mealeyau.api.ids.v1.GenerateResult>}
  */
 const methodDescriptor_IdService_Generate = new grpc.web.MethodDescriptor(
-  '/mealey.api.ids.v1.IdService/Generate',
+  '/mealeyau.api.ids.v1.IdService/Generate',
   grpc.web.MethodType.UNARY,
-  proto.mealey.api.ids.v1.GenerateRequest,
-  proto.mealey.api.ids.v1.GenerateResult,
+  proto.mealeyau.api.ids.v1.GenerateRequest,
+  proto.mealeyau.api.ids.v1.GenerateResult,
   /**
-   * @param {!proto.mealey.api.ids.v1.GenerateRequest} request
+   * @param {!proto.mealeyau.api.ids.v1.GenerateRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.mealey.api.ids.v1.GenerateResult.deserializeBinary
+  proto.mealeyau.api.ids.v1.GenerateResult.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.mealey.api.ids.v1.GenerateRequest,
- *   !proto.mealey.api.ids.v1.GenerateResult>}
+ *   !proto.mealeyau.api.ids.v1.GenerateRequest,
+ *   !proto.mealeyau.api.ids.v1.GenerateResult>}
  */
 const methodInfo_IdService_Generate = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.mealey.api.ids.v1.GenerateResult,
+  proto.mealeyau.api.ids.v1.GenerateResult,
   /**
-   * @param {!proto.mealey.api.ids.v1.GenerateRequest} request
+   * @param {!proto.mealeyau.api.ids.v1.GenerateRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.mealey.api.ids.v1.GenerateResult.deserializeBinary
+  proto.mealeyau.api.ids.v1.GenerateResult.deserializeBinary
 );
 
 
 /**
- * @param {!proto.mealey.api.ids.v1.GenerateRequest} request The
+ * @param {!proto.mealeyau.api.ids.v1.GenerateRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.mealey.api.ids.v1.GenerateResult)}
+ * @param {function(?grpc.web.Error, ?proto.mealeyau.api.ids.v1.GenerateResult)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.mealey.api.ids.v1.GenerateResult>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.mealeyau.api.ids.v1.GenerateResult>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.mealey.api.ids.v1.IdServiceClient.prototype.generate =
+proto.mealeyau.api.ids.v1.IdServiceClient.prototype.generate =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/mealey.api.ids.v1.IdService/Generate',
+      '/mealeyau.api.ids.v1.IdService/Generate',
       request,
       metadata || {},
       methodDescriptor_IdService_Generate,
@@ -138,17 +138,17 @@ proto.mealey.api.ids.v1.IdServiceClient.prototype.generate =
 
 
 /**
- * @param {!proto.mealey.api.ids.v1.GenerateRequest} request The
+ * @param {!proto.mealeyau.api.ids.v1.GenerateRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.mealey.api.ids.v1.GenerateResult>}
+ * @return {!Promise<!proto.mealeyau.api.ids.v1.GenerateResult>}
  *     Promise that resolves to the response
  */
-proto.mealey.api.ids.v1.IdServicePromiseClient.prototype.generate =
+proto.mealeyau.api.ids.v1.IdServicePromiseClient.prototype.generate =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/mealey.api.ids.v1.IdService/Generate',
+      '/mealeyau.api.ids.v1.IdService/Generate',
       request,
       metadata || {},
       methodDescriptor_IdService_Generate);
@@ -158,58 +158,58 @@ proto.mealey.api.ids.v1.IdServicePromiseClient.prototype.generate =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.mealey.api.ids.v1.VerifyRequest,
- *   !proto.mealey.api.ids.v1.VerifyResult>}
+ *   !proto.mealeyau.api.ids.v1.VerifyRequest,
+ *   !proto.mealeyau.api.ids.v1.VerifyResult>}
  */
 const methodDescriptor_IdService_Verify = new grpc.web.MethodDescriptor(
-  '/mealey.api.ids.v1.IdService/Verify',
+  '/mealeyau.api.ids.v1.IdService/Verify',
   grpc.web.MethodType.UNARY,
-  proto.mealey.api.ids.v1.VerifyRequest,
-  proto.mealey.api.ids.v1.VerifyResult,
+  proto.mealeyau.api.ids.v1.VerifyRequest,
+  proto.mealeyau.api.ids.v1.VerifyResult,
   /**
-   * @param {!proto.mealey.api.ids.v1.VerifyRequest} request
+   * @param {!proto.mealeyau.api.ids.v1.VerifyRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.mealey.api.ids.v1.VerifyResult.deserializeBinary
+  proto.mealeyau.api.ids.v1.VerifyResult.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.mealey.api.ids.v1.VerifyRequest,
- *   !proto.mealey.api.ids.v1.VerifyResult>}
+ *   !proto.mealeyau.api.ids.v1.VerifyRequest,
+ *   !proto.mealeyau.api.ids.v1.VerifyResult>}
  */
 const methodInfo_IdService_Verify = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.mealey.api.ids.v1.VerifyResult,
+  proto.mealeyau.api.ids.v1.VerifyResult,
   /**
-   * @param {!proto.mealey.api.ids.v1.VerifyRequest} request
+   * @param {!proto.mealeyau.api.ids.v1.VerifyRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.mealey.api.ids.v1.VerifyResult.deserializeBinary
+  proto.mealeyau.api.ids.v1.VerifyResult.deserializeBinary
 );
 
 
 /**
- * @param {!proto.mealey.api.ids.v1.VerifyRequest} request The
+ * @param {!proto.mealeyau.api.ids.v1.VerifyRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.mealey.api.ids.v1.VerifyResult)}
+ * @param {function(?grpc.web.Error, ?proto.mealeyau.api.ids.v1.VerifyResult)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.mealey.api.ids.v1.VerifyResult>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.mealeyau.api.ids.v1.VerifyResult>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.mealey.api.ids.v1.IdServiceClient.prototype.verify =
+proto.mealeyau.api.ids.v1.IdServiceClient.prototype.verify =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/mealey.api.ids.v1.IdService/Verify',
+      '/mealeyau.api.ids.v1.IdService/Verify',
       request,
       metadata || {},
       methodDescriptor_IdService_Verify,
@@ -218,17 +218,17 @@ proto.mealey.api.ids.v1.IdServiceClient.prototype.verify =
 
 
 /**
- * @param {!proto.mealey.api.ids.v1.VerifyRequest} request The
+ * @param {!proto.mealeyau.api.ids.v1.VerifyRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.mealey.api.ids.v1.VerifyResult>}
+ * @return {!Promise<!proto.mealeyau.api.ids.v1.VerifyResult>}
  *     Promise that resolves to the response
  */
-proto.mealey.api.ids.v1.IdServicePromiseClient.prototype.verify =
+proto.mealeyau.api.ids.v1.IdServicePromiseClient.prototype.verify =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/mealey.api.ids.v1.IdService/Verify',
+      '/mealeyau.api.ids.v1.IdService/Verify',
       request,
       metadata || {},
       methodDescriptor_IdService_Verify);
@@ -238,58 +238,58 @@ proto.mealey.api.ids.v1.IdServicePromiseClient.prototype.verify =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.mealey.api.ids.v1.DeleteRequest,
- *   !proto.mealey.api.ids.v1.DeleteResult>}
+ *   !proto.mealeyau.api.ids.v1.DeleteRequest,
+ *   !proto.mealeyau.api.ids.v1.DeleteResult>}
  */
 const methodDescriptor_IdService_Delete = new grpc.web.MethodDescriptor(
-  '/mealey.api.ids.v1.IdService/Delete',
+  '/mealeyau.api.ids.v1.IdService/Delete',
   grpc.web.MethodType.UNARY,
-  proto.mealey.api.ids.v1.DeleteRequest,
-  proto.mealey.api.ids.v1.DeleteResult,
+  proto.mealeyau.api.ids.v1.DeleteRequest,
+  proto.mealeyau.api.ids.v1.DeleteResult,
   /**
-   * @param {!proto.mealey.api.ids.v1.DeleteRequest} request
+   * @param {!proto.mealeyau.api.ids.v1.DeleteRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.mealey.api.ids.v1.DeleteResult.deserializeBinary
+  proto.mealeyau.api.ids.v1.DeleteResult.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.mealey.api.ids.v1.DeleteRequest,
- *   !proto.mealey.api.ids.v1.DeleteResult>}
+ *   !proto.mealeyau.api.ids.v1.DeleteRequest,
+ *   !proto.mealeyau.api.ids.v1.DeleteResult>}
  */
 const methodInfo_IdService_Delete = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.mealey.api.ids.v1.DeleteResult,
+  proto.mealeyau.api.ids.v1.DeleteResult,
   /**
-   * @param {!proto.mealey.api.ids.v1.DeleteRequest} request
+   * @param {!proto.mealeyau.api.ids.v1.DeleteRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.mealey.api.ids.v1.DeleteResult.deserializeBinary
+  proto.mealeyau.api.ids.v1.DeleteResult.deserializeBinary
 );
 
 
 /**
- * @param {!proto.mealey.api.ids.v1.DeleteRequest} request The
+ * @param {!proto.mealeyau.api.ids.v1.DeleteRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.mealey.api.ids.v1.DeleteResult)}
+ * @param {function(?grpc.web.Error, ?proto.mealeyau.api.ids.v1.DeleteResult)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.mealey.api.ids.v1.DeleteResult>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.mealeyau.api.ids.v1.DeleteResult>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.mealey.api.ids.v1.IdServiceClient.prototype.delete =
+proto.mealeyau.api.ids.v1.IdServiceClient.prototype.delete =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/mealey.api.ids.v1.IdService/Delete',
+      '/mealeyau.api.ids.v1.IdService/Delete',
       request,
       metadata || {},
       methodDescriptor_IdService_Delete,
@@ -298,22 +298,22 @@ proto.mealey.api.ids.v1.IdServiceClient.prototype.delete =
 
 
 /**
- * @param {!proto.mealey.api.ids.v1.DeleteRequest} request The
+ * @param {!proto.mealeyau.api.ids.v1.DeleteRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.mealey.api.ids.v1.DeleteResult>}
+ * @return {!Promise<!proto.mealeyau.api.ids.v1.DeleteResult>}
  *     Promise that resolves to the response
  */
-proto.mealey.api.ids.v1.IdServicePromiseClient.prototype.delete =
+proto.mealeyau.api.ids.v1.IdServicePromiseClient.prototype.delete =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/mealey.api.ids.v1.IdService/Delete',
+      '/mealeyau.api.ids.v1.IdService/Delete',
       request,
       metadata || {},
       methodDescriptor_IdService_Delete);
 };
 
 
-module.exports = proto.mealey.api.ids.v1;
+module.exports = proto.mealeyau.api.ids.v1;
 
